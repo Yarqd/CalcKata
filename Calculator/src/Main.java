@@ -10,10 +10,10 @@ public class Main {
         String primer = in.nextLine();
         String [] a = primer.split(" ");
         for (String element: a) {
-        }
-        System.out.println();
-
-        if (a[0] == "I|II|III|IV|V|VI|VII|VIII|IX|X" ^ a[2] == "I|II|III|IV|V|VI|VII|VIII|IX|X"){
+//        }
+//        System.out.println();
+//
+//        if (a[0] == "I|II|III|IV|V|VI|VII|VIII|IX|X" ^ a[2] == "I|II|III|IV|V|VI|VII|VIII|IX|X"){
 
         }
 
