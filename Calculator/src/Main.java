@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static int main(String[] args) throws IOException, NullPointerException {
+    public static void main(String[] args) throws IOException, Exception {
         System.out.println("Давай посчитаем?");
         Scanner in = new Scanner(System.in);
         String primer = in.nextLine();
@@ -13,11 +13,14 @@ public class Main {
         int c;
         boolean isRomain;
         char[] e = a[1].toCharArray();
+
+        b = Integer.parseInt(a[0]);
+        c = Integer.parseInt(a[2]);
+
         try {
             b = Integer.parseInt(a[0]);
             c = Integer.parseInt(a[2]);
-
-        } catch (NullPointerException e1) {
+        } catch (Exception e1) {
             System.out.println("Вы ввели неправильный знак");
         }
 
@@ -34,7 +37,7 @@ public class Main {
             }
     }
 
-    private static int romanToNumber (String roman) throws InputMismatchException {
+    private static int romanToNumber(String roman) throws InputMismatchException {
         try {
             if (roman.equals("I")) {
                 return 1;
@@ -56,22 +59,25 @@ public class Main {
                 return 9;
             } else if (roman.equals("X")) {
                 return 10;
+            } else {
+                throw new InputMismatchException("Неверный формат данных");
             }
+
         } catch (InputMismatchException e) {
             throw new InputMismatchException("Неверный формат данных");
         }
-        return -1;
-    }
 
-    private static String convertNumToRoman (int arab) {
-        String[] roman = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
-                "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
-                "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
-                "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
-                "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
-                "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
-                "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"
-        };
-        final String s = roman[arab];
-        return s;
+//        private static String convertNumToRoman(int arab){
+//            String[] romann = {"O", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
+//                    "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX", "XL",
+//                    "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX", "LX",
+//                    "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX", "LXX",
+//                    "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX", "LXXX",
+//                    "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX", "XC",
+//                    "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"
+//            };
+//            final String s = romann[arab];
+//            return -1;
+//        }
+    }
 }
